@@ -1,0 +1,48 @@
+<div>
+  You are bidding for one EDC ticket for entry on the last nightticket for entry on the last night..
+  Please input your contact information and bid price. Only your alias will be shown on the page.
+  The bid price and phone number are required (I will text you).
+  Pick up location: the Hampton Inn.
+</div>
+
+<div>
+  <form action="/bids" method="POST">
+    <%= auth_token %>
+    <div>
+      <label for="bids-name">Name</label>
+      <input type="text" name="bid[name]" placeholder="name, hidden" id="bids-name">
+    </div>
+   <div>
+      <label for="bids-alias">Alias</label>
+      <input type="text" name="bid[alias]" placeholder="alias, to be displayed on this page" id="bids-alias">
+    </div>
+    <div>
+      <label for="bids-price">Price</label>
+      <input type="text" name="bid[price]" placeholder="highest bid price, to be displayed here" id="bids-price">
+    </div>
+    <div>
+      <label for="bids-phone-number">Phone Number</label>
+      <input type="text" name="bid[phone_number]" placeholder="phone number, hidden" id="bids-phone-number">
+    </div>
+    <div>
+      <label for="bids-email">Email</label>
+      <input type="text" name="bid[email]" placeholder="email, hidden" id="bids-email">
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+  </form>
+</div>
+
+<div>
+  <ul>
+    <% highest_price = @bids.second.price %>
+    <% @bids.each do |bid| %>
+      <li>
+        <span><%= bid.price <= highest_price ? bid.price : highest_price %></span>
+        <span><%= bid.alias %></span>
+        <span><%= bid.created_at.to_formatted_s(:short) %></span>
+      </li>
+    <% end %>
+  </ul>
+<div>
