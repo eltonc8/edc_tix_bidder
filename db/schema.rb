@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20160616070521) do
   enable_extension "plpgsql"
 
   create_table "bids", force: :cascade do |t|
-    t.integer  "price"
+    t.integer  "price",        null: false
     t.string   "name"
-    t.string   "alias"
-    t.string   "phone_number"
+    t.string   "alias",        null: false
+    t.string   "phone_number", null: false
     t.string   "email"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false

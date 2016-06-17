@@ -8,17 +8,8 @@
 </head>
 <body>
 
-  <% if flash[:errors] %>
-    <ul>
-      <% flash[:errors].each do |message| %>
-        <li>
-          <%= message %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
 <%= yield %>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
 </html>

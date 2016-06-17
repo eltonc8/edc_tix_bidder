@@ -7,14 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Bid.create(
-  alias: "base_bid",
+  alias: "Alex",
   email: "default@example.com",
   name: "default",
   phone_number: 6503458888,
   price: 99,
 )
 Bid.create(
-  alias: "base_bid",
+  alias: "Kaitlin",
   email: "default@example.com",
   name: "default",
   phone_number: 6503458888,
